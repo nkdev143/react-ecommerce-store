@@ -1,0 +1,15 @@
+import React from "react";
+
+const Toast = ({ toasts }) => {
+  return (
+    <div className="toast-container">
+      {toasts.map(t => (
+        <div key={t.id} className={`toast ${t.type}`}>
+          {t.type === "success" && "✓"} {t.type === "error" && "⚠️"} {t.message}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Toast;
